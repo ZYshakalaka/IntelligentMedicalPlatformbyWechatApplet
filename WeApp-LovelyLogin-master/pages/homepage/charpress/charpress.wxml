@@ -1,0 +1,8 @@
+<!--charrate.wxml-->
+<view class="container">
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <text class="text">历史血压平均变化图</text>
+    <view class="weui-footer weui-footer_fixed-bottom">
+      <button class="weui-btn" bindtap="btn" type="primary">回到首页</button>
+      </view>
+</view>

@@ -1,0 +1,24 @@
+/* advise.wxss */
+.tem{
+  color: #707070;
+  font-size: 15px;
+}
+.press{
+  color: #707070;
+  font-size: 15px;
+}
+.rate{
+  color: #707070;
+  font-size: 15px;
+}
+.line-css2 {
+    height: 2px;
+    background: #707070;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.line-css1 {
+    height: 2px;
+    background: #707070;
+    margin-bottom: 10px;
+}

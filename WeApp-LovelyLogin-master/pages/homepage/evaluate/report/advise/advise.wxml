@@ -1,0 +1,31 @@
+<!--advise.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">健康检查分析建议</view>
+        <view class="page__desc">Hello! {{id}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">关于体温的建议</view>
+                    <view class="weui-article__p">
+                        <view class="tem"><text>{{tem_describe}}</text></view>
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">关于血压的建议</view>
+                    <view class="weui-article__p">
+                        <view class="press"><text>{{press_describe}}</text></view>
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">关于心率的建议</view>
+                    <view class="weui-article__p">
+                        <view class="rate"><text>{{rate_describe}}</text></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+/* news.wxss */
+.search{
+  display:flex;
+}
+.searchtext{
+  width: 70%;
+}
+.searchbutton{
+  width: 30%;
+  height: 50%;
+}
+.block {
+    height: 20%;
+}

@@ -1,0 +1,91 @@
+<!--homepage.wxml-->
+<view class="page">
+    <view class="highhead" >
+        <view class="change" bindtap="change">
+          <view class="headimg">
+            <image src="/images/change.png" style="width:20px;height:20px"></image>
+          </view>
+          <view class="headtap">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                  <text>Change</text>
+            </picker>
+          </view>
+          <view class="headimgview">
+            <text class="uid">{{id}}</text><image src="{{headimg}}" class="headimg" style="width:16px;height:16px"></image>
+          </view>
+        </view>
+    </view>
+    
+    <view class="line-css"></view>
+
+    <view class="bighead">
+    <view class="page__hd">
+      <view class="head">
+        <view class="bigimg">
+          <view class="page__title">
+              <image src="{{bimg}}" style="width:100px;height:100px;border: 0 solid #ff0000;border-radius: 100rpx;"></image>
+          </view>
+          <view class="page__desc">
+            Health for: {{user_id}} 
+          </view>
+        </view>
+        <view class="headimg">
+          
+        </view>
+      </view>
+    </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">
+              健康数据即时显示
+              <image src="/images/qes.png" class="qes" mode="aspectFill" bindtap="openAlert"></image>疑问
+            </view>
+            <view class="weui-panel__bd">
+                <view bindtap="jumpt" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="/images/tem.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">外温
+                        <image src="/images/clock.png" class="clock_image" mode="aspectFill"></image><text class="time">{{tem_time}}</text></view>
+                        <view class="weui-media-box__desc">{{tem}}°</view>
+                    </view>
+                </view>
+                <view bindtap="jumput" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="/images/usertem.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">体温
+                        <image src="/images/clock.png" class="clock_image" mode="aspectFill"></image><text class="time">{{tem_time}}</text></view>
+                        <view class="weui-media-box__desc">{{user_tem}}°</view>
+                    </view>
+                </view>
+                <view bindtap="jumpr" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="/images/rate.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">心率
+                        <image src="/images/clock.png" class="clock_image" mode="aspectFill"></image><text class="time">{{rate_time}}</text></view>
+                        <view class="weui-media-box__desc">{{user_rate}}bpm</view>
+                    </view>
+                </view>
+                <view bindtap="jumpp" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="/images/press.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">血压
+                        <image src="/images/clock.png" class="clock_image" mode="aspectFill"></image><text class="time">{{press_time}}</text></view>
+                        <view class="weui-media-box__desc">舒张压：{{user_press_l}},收缩压：{{user_press_h}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    <view  class="weui-panel__hd">下拉刷新~</view>
+    </view>
+</view>
+
+

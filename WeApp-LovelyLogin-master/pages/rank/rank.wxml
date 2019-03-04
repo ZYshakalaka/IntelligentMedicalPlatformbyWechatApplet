@@ -1,0 +1,46 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">本周排行榜Top3</view>
+        <view class="page__desc">{{time}}</view>
+    </view>
+    <view class="search">
+      <view class="searchtext">
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                  <view class="weui-cell__bd">
+                      <input class="weui-input"  type="text" bindinput="searchInput" placeholder="请输入待查询ID" />
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="searchbutton">
+          <button  bindtap="search" type="primary">查询</button>
+      </view>
+    </view>
+
+    <view class="page__bd">
+        <view class="weui-cells__title">排行榜实时更新~</view>
+        <block wx:for="{{data}}">
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                  <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                      <image src="{{item.img}}" style="width: 50px; height: 50px; display: block"/>
+                      <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">{{index+1}}</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <view>{{item.userid}}</view>
+                      <view style="font-size: 13px;color: #888888;">本周检测:{{item.times}}次     ,平均分:{{item.score}}分.</view>
+                  </view>
+              </view>
+          </view>
+        </block>
+    </view>
+    <view class="page__bd page__bd_spacing">
+      <view class="weui-footer">
+              <view class="weui-footer__links">
+                  <navigator url="" class="weui-footer__link">Ants</navigator>
+              </view>
+              <view class="weui-footer__text">基于FPGA硬件加速的微信远程智能医疗平台</view>
+      </view>
+    </view>
+</view>

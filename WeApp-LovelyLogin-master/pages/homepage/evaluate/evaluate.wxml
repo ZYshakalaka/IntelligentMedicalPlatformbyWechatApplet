@@ -1,0 +1,7 @@
+<!--evaluate.wxml-->
+<view class="img" bindtap="evaluate">
+  <image src="image/assess.png" style="width:150px;height:150px"></image>
+</view>
+<view class="word">
+  <text>一键评估/列表</text>
+</view>

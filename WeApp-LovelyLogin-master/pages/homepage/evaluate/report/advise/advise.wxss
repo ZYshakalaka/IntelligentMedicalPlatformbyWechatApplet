@@ -1,0 +1,13 @@
+/* advise.wxss */
+.tem{
+  color: #707070;
+  font-size: 15px;
+}
+.press{
+  color: #707070;
+  font-size: 15px;
+}
+.rate{
+  color: #707070;
+  font-size: 15px;
+}

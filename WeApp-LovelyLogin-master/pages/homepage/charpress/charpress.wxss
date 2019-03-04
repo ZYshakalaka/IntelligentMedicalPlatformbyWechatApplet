@@ -1,0 +1,7 @@
+/* charpress.wxss */
+.text{
+  margin-top: 40px;
+  padding-left: 10%;
+  font-family: 幼圆;
+  color: #888888;
+}

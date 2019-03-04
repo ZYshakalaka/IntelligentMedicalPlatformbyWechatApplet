@@ -1,0 +1,25 @@
+<view class="page">
+
+  <view class="wrapper">
+    <view class="loginform">
+      <view id="owl-login">
+        <image class="head" src="../../images/owl-login.png"></image>
+        <view class="hand {{inputPassword ? 'hand-password' : ''}}"></view>
+        <view class="hand hand-r {{inputPassword ? 'hand-r-password' : ''}}"></view>
+        <view class="arms">
+          <image class="arm {{inputPassword ? 'arm-password' : ''}}" src="../../images/owl-login-arm.png"></image>
+          <image class="arm arm-r {{inputPassword ? 'arm-r-password' : ''}}" src="../../images/owl-login-arm.png"></image>
+        </view>
+      </view>
+      <view class="control-group">
+        <view class="control">
+          <input type="text" bindinput="userNameInput" placeholder="账号"></input>
+        </view>
+        <view class="control">
+          <input type="password" bindinput="userPasswordInput" bindfocus="pwdFocus" bindblur="pwdBlur" placeholder="密码"></input>
+        </view>
+        <button  bindtap="bindIdentity" type="primary">登录</button>
+      </view>
+    </view>
+  </view>
+</view>

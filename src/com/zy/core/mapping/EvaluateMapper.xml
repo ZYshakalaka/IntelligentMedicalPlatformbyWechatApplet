@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.core.dao.EvaluateMapper" >
+  <resultMap id="BaseResultMap" type="com.zy.core.model.Evaluate" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="evaluate_time" property="evaluateTime" jdbcType="TIMESTAMP" />
+    <result column="evaluate_map" property="evaluateMap" jdbcType="VARCHAR" />
+    <result column="tem" property="tem" jdbcType="VARCHAR" />
+    <result column="tem_describe" property="temDescribe" jdbcType="VARCHAR" />
+    <result column="rate" property="rate" jdbcType="VARCHAR" />
+    <result column="rate_describe" property="rateDescribe" jdbcType="VARCHAR" />
+    <result column="press_h" property="pressH" jdbcType="VARCHAR" />
+    <result column="press_l" property="pressL" jdbcType="VARCHAR" />
+    <result column="press_describe" property="pressDescribe" jdbcType="VARCHAR" />
+    <result column="score" property="score" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="t_desc" property="tDesc" jdbcType="VARCHAR" />
+    <result column="p_desc" property="pDesc" jdbcType="VARCHAR" />
+    <result column="r_desc" property="rDesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, evaluate_time, evaluate_map, tem, tem_describe, rate, rate_describe, press_h, 
+    press_l, press_describe, score, user_id, t_desc, p_desc, r_desc
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zy.core.model.EvaluateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from evaluate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null" >
+      <if test="offset != null" >
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null" >
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from evaluate
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from evaluate
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zy.core.model.EvaluateExample" >
+    delete from evaluate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zy.core.model.Evaluate" >
+    insert into evaluate (id, evaluate_time, evaluate_map, 
+      tem, tem_describe, rate, 
+      rate_describe, press_h, press_l, 
+      press_describe, score, user_id, 
+      t_desc, p_desc, r_desc
+      )
+    values (#{id,jdbcType=INTEGER}, #{evaluateTime,jdbcType=TIMESTAMP}, #{evaluateMap,jdbcType=VARCHAR}, 
+      #{tem,jdbcType=VARCHAR}, #{temDescribe,jdbcType=VARCHAR}, #{rate,jdbcType=VARCHAR}, 
+      #{rateDescribe,jdbcType=VARCHAR}, #{pressH,jdbcType=VARCHAR}, #{pressL,jdbcType=VARCHAR}, 
+      #{pressDescribe,jdbcType=VARCHAR}, #{score,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{tDesc,jdbcType=VARCHAR}, #{pDesc,jdbcType=VARCHAR}, #{rDesc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zy.core.model.Evaluate" >
+    insert into evaluate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="evaluateTime != null" >
+        evaluate_time,
+      </if>
+      <if test="evaluateMap != null" >
+        evaluate_map,
+      </if>
+      <if test="tem != null" >
+        tem,
+      </if>
+      <if test="temDescribe != null" >
+        tem_describe,
+      </if>
+      <if test="rate != null" >
+        rate,
+      </if>
+      <if test="rateDescribe != null" >
+        rate_describe,
+      </if>
+      <if test="pressH != null" >
+        press_h,
+      </if>
+      <if test="pressL != null" >
+        press_l,
+      </if>
+      <if test="pressDescribe != null" >
+        press_describe,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="tDesc != null" >
+        t_desc,
+      </if>
+      <if test="pDesc != null" >
+        p_desc,
+      </if>
+      <if test="rDesc != null" >
+        r_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="evaluateTime != null" >
+        #{evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="evaluateMap != null" >
+        #{evaluateMap,jdbcType=VARCHAR},
+      </if>
+      <if test="tem != null" >
+        #{tem,jdbcType=VARCHAR},
+      </if>
+      <if test="temDescribe != null" >
+        #{temDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null" >
+        #{rate,jdbcType=VARCHAR},
+      </if>
+      <if test="rateDescribe != null" >
+        #{rateDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="pressH != null" >
+        #{pressH,jdbcType=VARCHAR},
+      </if>
+      <if test="pressL != null" >
+        #{pressL,jdbcType=VARCHAR},
+      </if>
+      <if test="pressDescribe != null" >
+        #{pressDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="tDesc != null" >
+        #{tDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="pDesc != null" >
+        #{pDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="rDesc != null" >
+        #{rDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zy.core.model.EvaluateExample" resultType="java.lang.Integer" >
+    select count(*) from evaluate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update evaluate
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.evaluateTime != null" >
+        evaluate_time = #{record.evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.evaluateMap != null" >
+        evaluate_map = #{record.evaluateMap,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tem != null" >
+        tem = #{record.tem,jdbcType=VARCHAR},
+      </if>
+      <if test="record.temDescribe != null" >
+        tem_describe = #{record.temDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rate != null" >
+        rate = #{record.rate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rateDescribe != null" >
+        rate_describe = #{record.rateDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pressH != null" >
+        press_h = #{record.pressH,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pressL != null" >
+        press_l = #{record.pressL,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pressDescribe != null" >
+        press_describe = #{record.pressDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.score != null" >
+        score = #{record.score,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tDesc != null" >
+        t_desc = #{record.tDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pDesc != null" >
+        p_desc = #{record.pDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rDesc != null" >
+        r_desc = #{record.rDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update evaluate
+    set id = #{record.id,jdbcType=INTEGER},
+      evaluate_time = #{record.evaluateTime,jdbcType=TIMESTAMP},
+      evaluate_map = #{record.evaluateMap,jdbcType=VARCHAR},
+      tem = #{record.tem,jdbcType=VARCHAR},
+      tem_describe = #{record.temDescribe,jdbcType=VARCHAR},
+      rate = #{record.rate,jdbcType=VARCHAR},
+      rate_describe = #{record.rateDescribe,jdbcType=VARCHAR},
+      press_h = #{record.pressH,jdbcType=VARCHAR},
+      press_l = #{record.pressL,jdbcType=VARCHAR},
+      press_describe = #{record.pressDescribe,jdbcType=VARCHAR},
+      score = #{record.score,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      t_desc = #{record.tDesc,jdbcType=VARCHAR},
+      p_desc = #{record.pDesc,jdbcType=VARCHAR},
+      r_desc = #{record.rDesc,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zy.core.model.Evaluate" >
+    update evaluate
+    <set >
+      <if test="evaluateTime != null" >
+        evaluate_time = #{evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="evaluateMap != null" >
+        evaluate_map = #{evaluateMap,jdbcType=VARCHAR},
+      </if>
+      <if test="tem != null" >
+        tem = #{tem,jdbcType=VARCHAR},
+      </if>
+      <if test="temDescribe != null" >
+        tem_describe = #{temDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null" >
+        rate = #{rate,jdbcType=VARCHAR},
+      </if>
+      <if test="rateDescribe != null" >
+        rate_describe = #{rateDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="pressH != null" >
+        press_h = #{pressH,jdbcType=VARCHAR},
+      </if>
+      <if test="pressL != null" >
+        press_l = #{pressL,jdbcType=VARCHAR},
+      </if>
+      <if test="pressDescribe != null" >
+        press_describe = #{pressDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="tDesc != null" >
+        t_desc = #{tDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="pDesc != null" >
+        p_desc = #{pDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="rDesc != null" >
+        r_desc = #{rDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zy.core.model.Evaluate" >
+    update evaluate
+    set evaluate_time = #{evaluateTime,jdbcType=TIMESTAMP},
+      evaluate_map = #{evaluateMap,jdbcType=VARCHAR},
+      tem = #{tem,jdbcType=VARCHAR},
+      tem_describe = #{temDescribe,jdbcType=VARCHAR},
+      rate = #{rate,jdbcType=VARCHAR},
+      rate_describe = #{rateDescribe,jdbcType=VARCHAR},
+      press_h = #{pressH,jdbcType=VARCHAR},
+      press_l = #{pressL,jdbcType=VARCHAR},
+      press_describe = #{pressDescribe,jdbcType=VARCHAR},
+      score = #{score,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      t_desc = #{tDesc,jdbcType=VARCHAR},
+      p_desc = #{pDesc,jdbcType=VARCHAR},
+      r_desc = #{rDesc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,22 @@
+<!--statistics.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-btn-area">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <button type="default">Change</button>
+            </picker>
+        </view>  
+    </view>
+</view>
+<view class="time">
+  <text>{{time}}</text>
+</view>
+{{h}}
+<view class="container">
+    <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
+</view>
+{{l}}
+<view class="container">
+    <canvas canvas-id="pieCanvas2" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
+</view>
+

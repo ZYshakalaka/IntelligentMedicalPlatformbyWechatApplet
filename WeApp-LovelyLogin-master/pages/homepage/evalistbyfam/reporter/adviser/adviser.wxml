@@ -1,0 +1,39 @@
+<!--advise.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">健康检查分析建议</view>
+        <view class="page__desc">关于 {{user_id}}</view>
+    </view>
+    <view class="line-css1"></view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">体温的建议</view>
+                    <view class="weui-article__p">
+                        <view class="tem"><text>{{tem_describe}}</text></view>
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">血压的建议</view>
+                    <view class="weui-article__p">
+                        <view class="press"><text>{{press_describe}}</text></view>
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">心率的建议</view>
+                    <view class="weui-article__p">
+                        <view class="rate"><text>{{rate_describe}}</text></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="line-css2"></view>
+    <view class="weui-footer">
+            <view class="weui-footer__links">
+                <text>Ants的本次检查小建议</text>
+            </view>
+            <view class="weui-footer__text">基于FPGA硬件加速的微信远程智能医疗平台</view>
+    </view>
+</view>

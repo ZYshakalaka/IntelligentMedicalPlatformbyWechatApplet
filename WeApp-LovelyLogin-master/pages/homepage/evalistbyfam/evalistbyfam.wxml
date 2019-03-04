@@ -1,0 +1,32 @@
+<!--evalistbyfam.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">评估列表</view>
+        <view class="page__desc"></view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+                <block wx:for="{{data}}">
+                  <navigator url="../evalistbyfam/reporter/reporter?evalid={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                          <image class="weui-media-box__thumb" src="{{item.img}}" />
+                      </view>
+                      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                          <view class="weui-media-box__title">
+                            <view class="score">
+                              评估人:{{item.userid}}得分:<text>{{item.score}}</text>分
+                            </view>
+                          </view>
+                          <view class="weui-media-box__desc">
+                            问题描述:{{item.describe}} \n 时间:{{item.time}}
+                          </view>
+                      </view>
+                  </navigator>
+                </block>
+           
+        </view>
+      
+        </view>
+    </view>
+</view>

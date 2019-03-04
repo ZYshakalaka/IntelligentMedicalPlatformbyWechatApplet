@@ -1,0 +1,10 @@
+<view class="health">
+  <text>基于FPGA的远程微信平台</text>
+</view>
+<view class="ants">
+  <text>----Ants</text>
+</view>
+<view class="page">
+  <button  bindtap="login" type="primary">去登录</button>
+  <button  bindtap="eval" type="primary">统计</button>
+</view>

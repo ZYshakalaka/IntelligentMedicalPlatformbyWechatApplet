@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/homepage/homepage",
+    "pages/homepage/chart/chart",
+    "pages/homepage/charutem/charutem",
+    "pages/homepage/charpress/charpress",
+    "pages/homepage/charrate/charrate",
+    "pages/login/login",
+    "pages/homepage/evaluate/evaluate",
+    "pages/homepage/evaluate/report/report",
+    "pages/homepage/evaluate/report/advise/advise",
+    "pages/homepage/evalistbyfam/evalistbyfam",
+    "pages/homepage/evalistbyfam/reporter/reporter",
+    "pages/homepage/evalistbyfam/reporter/adviser/adviser",
+    "pages/rank/rank",
+    "pages/statistics/statistics"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0E932E",
+    "navigationBarTitleText": "HealthCloud",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#1bada6",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "欢迎",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/homepage/evaluate/evaluate",
+        "text": "评估",
+        "iconPath": "images/evluate.png",
+        "selectedIconPath": "images/evluate.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "排行榜",
+        "iconPath": "images/rank.png",
+        "selectedIconPath": "images/rank.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+/* evaluate.wxss */
+.img{
+  margin-top: 20%;
+  margin-left: 30%; 
+}
+.word{
+  margin-left: 35%;
+}
